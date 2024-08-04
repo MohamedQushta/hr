@@ -23,5 +23,8 @@ Route::middleware("auth:sanctum")->get("/user", function (Request $request) {
 Route::group(['prefix' => 'auth'], function () {
     Route::get('users', [AuthController::class, 'getAllUsers']);
     Route::post('register', [AuthController::class, 'register']);
+    Route::post('login', [AuthController::class, 'login']);
+    Route::post('logout', [AuthController::class, 'logout']);
+    Route::get('profile', [AuthController::class, 'profile']);
 });
 Route::apiResource('roles', RoleController::class);

@@ -1,12 +1,14 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api;
 
 use App\Http\Requests\StoreRoleRequest;
 use App\Http\Requests\UpdateRoleRequest;
 use App\Models\Role;
 use Illuminate\Auth\Events\Validated;
 use Illuminate\Http\Response;
+use App\Http\Controllers\Controller;
+
 
 class RoleController extends Controller
 {
@@ -17,7 +19,7 @@ class RoleController extends Controller
     {
         $roles = Role::all();
         if ($roles->isEmpty()) {
-            return response()->json(['message' => 'Roles is Empty'], Response::HTTP_NOT_FOUND);
+            return response()->json(["result" => 'false', 'message' => 'Roles is Empty'], Response::HTTP_NOT_FOUND);
         }
         return response()->json(['message' => 'Roles Data', 'roles' => $roles], Response::HTTP_OK);
     }
@@ -30,7 +32,7 @@ class RoleController extends Controller
     {
         $role = Role::create($request->validated());
         if (!$role) {
-            return response()->json(["result" => 'false', 'message' => 'Failed to Store'], Response::HTTP_NOT_FOUND);
+            return response()->json(["result" => 'false', 'message' => 'Failed to Store Role'], Response::HTTP_NOT_FOUND);
         }
         return response()->json(["result" => 'true', 'message' => 'Roles Created', 'roles' => $role], Response::HTTP_CREATED);
     }

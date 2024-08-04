@@ -1,12 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api;
 
-use App\Http\Requests\StoreLocationRequest;
-use App\Http\Requests\UpdateLocationRequest;
-use App\Models\Location;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreIpAddressRequest;
+use App\Http\Requests\UpdateIpAddressRequest;
+use App\Models\IpAddress;
 
-class LocationController extends Controller
+class IpAddressController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -27,7 +28,7 @@ class LocationController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreLocationRequest $request)
+    public function store(StoreIpAddressRequest $request)
     {
         //
     }
@@ -35,7 +36,7 @@ class LocationController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Location $location)
+    public function show(IpAddress $ipAddress)
     {
         //
     }
@@ -43,7 +44,7 @@ class LocationController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Location $location)
+    public function edit(IpAddress $ipAddress)
     {
         //
     }
@@ -51,7 +52,7 @@ class LocationController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateLocationRequest $request, Location $location)
+    public function update(UpdateIpAddressRequest $request, IpAddress $ipAddress)
     {
         //
     }
@@ -59,7 +60,7 @@ class LocationController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Location $location)
+    public function destroy(IpAddress $ipAddress)
     {
         //
     }
